@@ -54,11 +54,11 @@ resume = False # set it to True if you want to start from a checkpoint.pth to ke
 parameters = dict(
     lr = [0.0003, 0.00003], 
     batch_size = [32, 64], 
-    weight_decay = [0.5, 0.05], 
+    weight_decay = [0.5, 0.05, 0.04], 
     num_workers=[2],
     epoch = [40],
     weight_entropy = [0.1],
-    weight_rot = [1]
+    weight_rot = [1, 0.8]
 )
 
 
@@ -348,7 +348,7 @@ for runs in RunBuilder.get_runs(parameters):
     
 
 #make folder result_csv in to save results, save with your own name
-recod.save_to_csv("giuseppe1.csv")
+#recod.save_to_csv("result.csv")
 recod.df.to_csv("./result_csv")
 
 del rgb_extrector, depth_extrector, obj_classifier, rot_classifier
