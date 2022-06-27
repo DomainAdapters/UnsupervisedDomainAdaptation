@@ -121,6 +121,8 @@ class MyDataset(Dataset):
       else:
         x = random.randint(0, 360)
         y = random.randint(0, 360)
+        #x = random.uniform(0,360)
+        #y = random.uniform(0,360)     for any float rotation
         img_rgb = self.rotation(img_rgb, x)
         img_depth = self.rotation(img_depth, y)
         img_rgb = self.croping(img_rgb,self.crop)
